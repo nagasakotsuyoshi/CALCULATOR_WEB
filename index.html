@@ -4,12 +4,13 @@
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="css/index.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/calculator.js"></script>
+  <script type="text/javascript" src="js/rpn.min.js"></script>
+  <script type="text/javascript" src="js/calc.js"></script>
   <title>CALCULATOR WEB</title>
 </head>
 <body>
   <h1>電卓の実装</h1>
-  <input id="inputbox" type="text" value="" maxlength="10">
+  <input id="inputbox" type="text" value="" readonly="readonly" maxlength="20">
   <table id="calc_table" border="1">
     <tr>
       <th><button class="num" type="button">7</button></th>
@@ -32,7 +33,7 @@
     <tr>
       <th><button class="num" type="button">0</button></th>
       <th><button class="num" type="button">.</button></th>
-      <th><button class="op" type="button">＝</button></th>
+      <th><button class="eq" type="button">＝</button></th>
       <th><button class="op" type="button">＋</button></th>
     </tr>
   </table>
