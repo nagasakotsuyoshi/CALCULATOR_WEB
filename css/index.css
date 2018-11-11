@@ -1,10 +1,18 @@
+.container {
+  width: 50%;
+  margin: 0 auto;
+}
+
 #inputfield {
-  width: 400px;
+  width: 100%;
+  padding: initial;
   text-align: right;
   font-size: 35px;
+  box-sizing: border-box;
 }
 
 #calc_table {
+  width: 100%;
   font-size: 50px;
 }
 
