@@ -20,6 +20,11 @@ $(function(){
     cal();
   });
 
+  // クリアボタンの処理
+  $(".clear").click(function(){
+    $("#inputfield").val("");
+  });
+  
   // Enterキー入力時の処理
   $("#inputfield").keypress(function(ev){
     if ((ev.which && ev.which === 13) || (ev.keyCode && ev.keyCode === 13))
