@@ -3,7 +3,7 @@
   margin: 0 auto;
 }
 
-#inputfield {
+.container #inputfield {
   width: 100%;
   padding: initial;
   text-align: right;
@@ -11,16 +11,16 @@
   box-sizing: border-box;
 }
 
-#calc_table {
+.container #calc_table {
   width: 100%;
   font-size: 50px;
 }
 
-th {
+.container #calc_table th {
   width: 100px;
 }
 
-button {
+.container #calc_table th button {
   font-size: 50px;
   width: 100%;
 }
