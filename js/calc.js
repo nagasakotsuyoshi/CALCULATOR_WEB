@@ -1,34 +1,49 @@
 $(function(){
-  var inputVal = "";
   var inputFormula = "";
+  $("#inputfield").val("");
+  $("#inputfield").focus();
 
   // 数字ボタンの処理
   $(".num").click(function(){
     var inputNum = $(this).text();
-    inputFormula = inputFormula + inputNum;
-    inputVal = inputVal + inputNum;
-    $("#inputbox").val(inputVal);
+    addInputVal(inputNum);
   });
 
   // 演算子ボタンの処理
   $(".op").click(function(){
     var inputOp = $(this).text();
-    inputVal = inputVal + inputOp;
-    $("#inputbox").val(inputVal);
-    switch (inputOp){
-      case "＋": var replacedSym = "+"; break;
-      case "−" : var replacedSym = "-"; break;
-      case "×": var replacedSym = "*"; break;
-      case "÷": var replacedSym = "/"; break;
-    }
-    inputFormula = inputFormula + replacedSym;
+    addInputVal(inputOp);
   });
 
+  // イコールボタンの処理
   $(".eq").click(function(){
+    cal();
+  });
+
+  // Enterキー入力時の処理
+  $("#inputfield").keypress(function(ev){
+    if ((ev.which && ev.which === 13) || (ev.keyCode && ev.keyCode === 13))
+      cal();
+  })
+
+  function addInputVal(addStr){
+    var inputVal = $("#inputfield").val();
+    $("#inputfield").val(inputVal + addStr);
+  }
+
+  function initInputVal(initStr){
+    $("#inputfield").val(initStr);
+  }
+
+  function cal(){
+    var inputVal = $("#inputfield").val();
+    inputFormula = inputVal.replace("＋", "+")
+                           .replace("−", "-")
+                           .replace("×", "*")
+                           .replace("÷", "/");
     var reversePolishFormula = rpn.Generate(inputFormula);
     var answer = rpn(reversePolishFormula);
-    inputVal = answer;
-    $("#inputbox").val(inputVal);
+    initInputVal(answer);
     inputFormula = answer;
-  });
+  }
 });
