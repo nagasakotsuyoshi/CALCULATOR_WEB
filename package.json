@@ -16,7 +16,7 @@
     "url": "https://github.com/kzk-horie/CALCULATOR_WEB/issues"
   },
   "homepage": "https://github.com/kzk-horie/CALCULATOR_WEB#readme",
-  "devDependencies": {
+  "dependencies": {
     "browser-sync": "^2.26.3",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.6.1",
